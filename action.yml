@@ -339,7 +339,7 @@ runs:
                     echo "CONFIG_KPROBES is enabled, skip patch."
                 else
                     opam init --disable-sandboxing --yes && eval $(opam env) && opam install --yes coccinelle
-                    curl -sSLf https://github.com/dabao1955/kernel_build_action/raw/main/kernelsu/apply_cocci.sh | bash
+                    curl -sSLf "https://github.com/dabao1955/kernel_build_action/raw/main/kernelsu/apply_cocci.sh" -o /tmp/patch.sh && bash /tmp/patch.sh && rm -f /tmp/patch.sh
                 fi
             fi
             echo "::endgroup::"
@@ -347,7 +347,7 @@ runs:
 
         if [ "${{ inputs.rekernel }}" == "true" ]; then
             echo "::group::Initializing Re-Kernel"
-            curl -SsL https://github.com/dabao1955/kernel_build_action/raw/main/rekernel/patch.sh | bash
+            curl -sSLf "https://github.com/dabao1955/kernel_build_action/raw/main/rekernel/patch.sh" -o /tmp/re.sh && bash /tmp/re.sh && rm -f /tmp/re.sh
             echo "::endgroup::"
         fi
 
