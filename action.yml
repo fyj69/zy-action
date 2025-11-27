@@ -344,7 +344,7 @@ runs:
 
         if compgen -G "*/kernel/kpm"; then
             echo -e "CONFIG_KPM=y" >> arch/${{ inputs.arch }}/configs/${{ inputs.config }}
-            sed -i 's/#if (LINUX_VERSION_CODE >= KERNEL_VERSION(4, 9, 0))/#if (LINUX_VERSION_CODE >= KERNEL_VERSION(4, 14, 0))/' KernelSU/kernel/kpm/super_access.c
+            sed -i 's/#if (LINUX_VERSION_CODE >= KERNEL_VERSION(4, 9, 0))/#if (LINUX_VERSION_CODE >= KERNEL_VERSION(4, 14, 0))/' */kernel/kpm/super_access.c
         fi
 
         if [ "${{ inputs.zram }}" == "true" ]; then
