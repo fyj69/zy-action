@@ -27,13 +27,16 @@ jobs:
           aosp-clang: true
           android-version: 12
           aosp-clang-version: r416183b
+          extra-cmd: KCFLAGS="-std=gnu99"
           ksu: true
           ksu-version: next
           ksu-other: true
-          ksu-url: https://github.com/rifsxd/KernelSU-Next
+          ksu-url: https://github.com/KernelSU-Next/KernelSU-Next
           lxc: true
           lxc-patch: true
           nethunter: true
           nethunter-patch: true
           bbrplus: true
+          zram: true
+          bbg: true
           anykernel3: true
