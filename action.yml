@@ -86,7 +86,7 @@ inputs:
     default: false
   bbg:
     required: false
-    default: false    
+    default: false
   ccache:
     required: false
     default: false
